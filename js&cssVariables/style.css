@@ -1,0 +1,29 @@
+:root{
+    --spacing:10px;
+    --blur:1px;
+    --base:#abcdef;
+}
+
+body{
+    background-color: #193549;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-family:'Courier New', Courier, monospace;
+    color:white;
+    font-size:30px;
+}
+
+img{
+    padding:var(--spacing);
+    background-color: var(--base);
+    filter:blur(var(--blur));
+}
+
+.controls{
+    margin-bottom:5vh;
+}
+
+.h1{
+    color:var(--base);
+}
