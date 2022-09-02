@@ -25,19 +25,9 @@ function draw(e){
     ctx.stroke();
     [lastX,lastY] = [e.offsetX,e.offsetY];
     hue++
-    if(hue >= 360){
-        hue = 0;
-    }
-    if(ctx.lineWidth >=100 || ctx.lineWidth <= 1){
-        direction = !direction;
-    }
-    if(direction){
-        ctx.lineWidth++;
-    }else{
-        ctx.lineWidth--;
-    }
-
-    console.log(ctx.lineWidth);
+    hue = hue>=360 ? 0 : hue;
+    direction = ctx.lineWidth >=100 || ctx.lineWidth <= 1 ? !direction : direction;
+    ctx.lineWidth = direction ? ctx.lineWidth + 1 : ctx.lineWidth - 1;
 }
 
 
