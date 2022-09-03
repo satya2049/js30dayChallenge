@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    const p = document.querySelector('p');
+    function makeGreen() {
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log("regular");
+
+    // Interpolated
+    console.log('iam %s',"satya");
+
+    // Styled
+    // console.log('%c this is styled text',"background:red;font-size:50px")
+
+    // warning!
+    console.warn("hey this is warning!!");
+
+    // Error :|
+    console.error("oops it is an error!!");
+
+    // Info
+    console.info("ok this is info");
+
+    // Testing
+    console.assert(1===2,'1 is != 2')
+
+    // clearing
+    console.clear();
+
+    // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+
+    // Grouping together
+    dogs.forEach(dog=>{
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`dog name is ${dog.name}`);
+        console.groupEnd();
+    })
+
+    // counting
+    console.count("we");
+    console.count("school");
+    console.count("we");
+
+    // timing
+    console.time('forloop');
+    for(let i=0;i<=100;i++){
+        console.log(i**2);
+        console.log(i**2);
+        console.log(i**2);
+        console.log(i**2);
+        console.log(i**2);
+
+    }
+    console.timeEnd('forloop');
+
+    // table
+    console.table(dogs);
+  </script>
+</body>
+</html>
